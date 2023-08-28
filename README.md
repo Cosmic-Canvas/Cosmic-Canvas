@@ -1,1 +1,1 @@
-# AstroArte
+# Cosmic Canvas
