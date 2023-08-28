@@ -8,7 +8,13 @@
           })
           .then(data => {
               console.log(data);
-              console.log(data.data[Math.floor(Math.random() * 10)])
+              let currentImage = data.data[Math.floor(Math.random() * 10)]//this generates a random image, we might have to create four for each dialogue (i have an idea for this)
+              console.log(currentImage, currentImage.image_id) //to check if i am fetching correct info
+              //creating new image on document
+              let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
+              let image = document.createElement('img')
+              image.setAttribute("src", imageLink)
+              document.body.appendChild(image)//angie!! you can just append this to where you want the image to go!
           })
           .catch(error => {
               console.error("Error:", error.message)
@@ -36,6 +42,10 @@ const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
         })
         .then(data => {
             console.log(data);
+            let current = data[0];
+            let quote = current.quote;
+            let author = current.author;
+            console.log(author, quote)
             const quoteElement = document.getElementById('quote');
             if (quoteElement) {
                 quoteElement.textContent = data[0]?.quote || "No quotes available.";
@@ -47,3 +57,4 @@ const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
     }
 
     getQuote();
+
