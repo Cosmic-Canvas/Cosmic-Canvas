@@ -1,7 +1,10 @@
+//DOM CALLS:
+let dialogs = document.getElementsByTagName("dialog")
+let image = document.createElement('img')
 //IMAGE FETCH
 
-const getImage = (keyword) => {
-    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=fire`
+const getImage = () => {
+    const url1 = `https://api.artic.edu/api/v1/artworks/`
     fetch(url1)
     .then(response => {
         console.log(response);
@@ -13,19 +16,14 @@ const getImage = (keyword) => {
         console.log(currentImage) //to check if i am fetching correct info
         //creating new image on document
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
-        let image = document.createElement('img')
         image.setAttribute("src", imageLink)
-        document.body.appendChild(image)//angie!! you can just append this to where you want the image to go!
+        dialogs.appendChild(image)
     })
     .catch(error => {
         console.error("Error:", error.message)
     })
 }
-getImage('fire')
-
-
-
-
+getImage()
 
 
 
@@ -65,3 +63,12 @@ const getQuote = () => {
 
 getQuote();
 
+//dialogue click trigger
+
+const dialogOpener = (dialogID) => {
+    let currentDialog = document.getElementById(dialogID)
+    currentDialog.open() 
+}
+
+const ariesButton = document.getElementById("Aries button")
+ariesButton.addEventListener("click", dialogOpener("ariesSelection"))
