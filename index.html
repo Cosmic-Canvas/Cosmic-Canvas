@@ -7,49 +7,123 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <h1>Test your API!</h1>
-  <script type="text/javascript">
-    const testRoute = async (url) => {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log('data:', data);
-    }
-    const url1 = 'https://api.artic.edu/api/v1/artworks';
-    testRoute(url1);
-  </script>
-  <script id='Url2'>
-    const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
-    const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
+    <div id = "Top of Page">
+        <h1 id = "Title"> Cosmic Canvas </h1>
+        <p id = "Description"> Welcome to the Cosmic Canvas, a celestial sanctuary where art and wisdom intertwine under the guiding light of the zodiac. Unveil the enchanting world of the stars as we present to you a fusion of artistic expressions and profound quotes inspired by the twelve celestial constellations.</p>
+        <p id = "Instruction"> Click your sign to create your cosmic canvas! </p>
+    </div>
+    <main>
+        <dialog id = "ariesSelection"> 
+            <h2> Aries </h2>
+            <div id = "fireSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form>
+        </dialog>
 
-    const getQuote = () => {
-        fetch(apiUrl, {
-            method: 'GET',
-            headers: {
-                'X-Api-Key': apiKey,
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Request failure status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            const quoteElement = document.getElementById('quote');
-            if (quoteElement) {
-                quoteElement.textContent = data[0]?.quote || "No quotes available.";
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error.message);
-        });
-    }
+        <dialog id = "taurusSelection">
+            <h2> Taurus </h2>
+            <div id = "earthSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
 
-    getQuote();
-    </script>
+        <dialog id = "geminiSelection">
+            <h2> Gemini </h2>
+            <div id = "airSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "cancerSelection">
+            <h2> Cancer </h2>
+            <div id = "waterSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "leoSelection">
+            <h2> Leo </h2>
+            <div id = "fireSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "virgoSelection">
+            <h2> Virgo </h2>
+            <div id = "earthSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "libraSelection">
+            <h2> Libra </h2>
+            <div id = "airSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "scorpioSelection">
+            <h2> Scorpio </h2>
+            <div id = "waterSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "sagittariusSelection">
+            <h2> Sagittarius </h2>
+            <div id = "fireSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+        
+        <dialog id = "capricornSelection">
+            <h2> Capricorn </h2>
+            <div id = "earthSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "aquariusSelection">
+            <h2> Aquarius </h2>
+            <div id = "airSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form> 
+        </dialog>
+
+        <dialog id = "piscesSelection"> 
+            <h2> Pisces </h2>
+            <div id = "waterSignImg"> </div>
+            <form id = "close-modal" aria-label="Close modal" method = "dialog">
+                <button> X </button>
+            </form>
+        </dialog>
+       
+        <div id = "Zodiac buttons">
+            <button class="Aries button" type="button">Aries</button>
+            <button class="Taurus button" type="button">Taurus</button>
+            <button class="Gemini button" type="button">Gemini</button>
+            <button class="Cancer button" type="button">Cancer</button>
+            <button class="Leo button" type="button">Leo</button>
+            <button class="Virgo button" type="button">Virgo</button><button class="Scorpio button" type="button">Add to favorites</button>
+            <button class="Sagittarius button" type="button">Sagittarius</button>
+            <button class="Libra button" type="button">Libra</button>
+            <button class="Capicorn button" type="button">Capicorn</button>
+            <button class="Aquarius button" type="button">Aquarius</button>
+            <button class="Pisces button" type="button">Pisces</button>
+        </div>
+    </main>
+
+    
 </body>
 </html>
-
-
