@@ -1,6 +1,10 @@
+//DOM CALLS:
+let dialogs = document.getElementsByTagName("dialog")
+let image = document.createElement('img')
 //IMAGE FETCH
-const url1 = `https://api.artic.edu/api/v1/artworks/`
+
 const getImage = () => {
+    const url1 = `https://api.artic.edu/api/v1/artworks/`
     fetch(url1)
     .then(response => {
         console.log(response);
@@ -9,18 +13,19 @@ const getImage = () => {
     .then(data => {
         console.log(data);
         let currentImage = data.data[Math.floor(Math.random() * 10)]//this generates a random image, we might have to create four for each dialogue (i have an idea for this)
-        console.log(currentImage, currentImage.image_id) //to check if i am fetching correct info
+        console.log(currentImage) //to check if i am fetching correct info
         //creating new image on document
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
-        let image = document.createElement('img')
         image.setAttribute("src", imageLink)
-        document.body.appendChild(image)//angie!! you can just append this to where you want the image to go!
+        dialogs.appendChild(image)
     })
     .catch(error => {
         console.error("Error:", error.message)
     })
 }
 getImage()
+
+
 
 //QUOTE FETCH
 const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
@@ -58,3 +63,12 @@ const getQuote = () => {
 
 getQuote();
 
+//dialogue click trigger
+
+const dialogOpener = (dialogID) => {
+    let currentDialog = document.getElementById(dialogID)
+    currentDialog.open() 
+}
+
+const ariesButton = document.getElementById("Aries button")
+ariesButton.addEventListener("click", dialogOpener("ariesSelection"))
