@@ -1,7 +1,7 @@
 //IMAGE FETCH
 
 const getImage = (keyword) => {
-    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=${keyword}`
+    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=fire`
     fetch(url1)
     .then(response => {
         console.log(response);
@@ -10,7 +10,7 @@ const getImage = (keyword) => {
     .then(data => {
         console.log(data);
         let currentImage = data.data[Math.floor(Math.random() * 10)]//this generates a random image, we might have to create four for each dialogue (i have an idea for this)
-        console.log(currentImage, currentImage.image_id) //to check if i am fetching correct info
+        console.log(currentImage) //to check if i am fetching correct info
         //creating new image on document
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
         let image = document.createElement('img')
@@ -21,7 +21,7 @@ const getImage = (keyword) => {
         console.error("Error:", error.message)
     })
 }
-getImage("fire")
+getImage('fire')
 
 
 
