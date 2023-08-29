@@ -1,6 +1,7 @@
 //IMAGE FETCH
-const url1 = `https://api.artic.edu/api/v1/artworks/`
-const getImage = () => {
+
+const getImage = (keyword) => {
+    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=${keyword}`
     fetch(url1)
     .then(response => {
         console.log(response);
@@ -20,7 +21,13 @@ const getImage = () => {
         console.error("Error:", error.message)
     })
 }
-getImage()
+getImage("fire")
+
+
+
+
+
+
 
 //QUOTE FETCH
 const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
