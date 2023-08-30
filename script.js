@@ -27,6 +27,7 @@ getImage()
 
 
 
+
 //QUOTE FETCH
 const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
 const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
