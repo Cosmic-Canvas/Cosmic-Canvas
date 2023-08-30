@@ -1,5 +1,6 @@
 //DOM CALLS:
-let dialogs = document.getElementsByTagName("dialog")
+let dialogs = document."dialog")
+console.log(dialogs)
 let image = document.createElement('img')
 //IMAGE FETCH
 
@@ -17,7 +18,7 @@ const getImage = () => {
         //creating new image on document
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
         image.setAttribute("src", imageLink)
-        dialogs.appendChild(image)
+        dialogs.append(image)
     })
     .catch(error => {
         console.error("Error:", error.message)
@@ -67,7 +68,8 @@ getQuote();
 
 const dialogOpener = (dialogID) => {
     let currentDialog = document.getElementById(dialogID)
-    currentDialog.open() 
+    currentDialog.open()
+    console.log("green")
 }
 
 const ariesButton = document.getElementById("Aries button")
