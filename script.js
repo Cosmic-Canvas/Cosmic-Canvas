@@ -60,5 +60,9 @@ const getQuote = () => {
       console.error("Error:", error.message);
   });
 }
-
-getQuote();
+getQuote()
+let button = document.querySelector(`.buttons`);
+button.addEventListener("click", () => {
+    getQuote();
+    getImage();
+});
