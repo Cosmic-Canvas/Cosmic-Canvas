@@ -1,7 +1,5 @@
 //DOM CALLS:
-let dialogs = document."dialog")
-console.log(dialogs)
-let image = document.createElement('img')
+
 //IMAGE FETCH
 
 const getImage = () => {
@@ -17,8 +15,9 @@ const getImage = () => {
         console.log(currentImage) //to check if i am fetching correct info
         //creating new image on document
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
-        image.setAttribute("src", imageLink)
-        dialogs.append(image)
+   
+        let img = document.querySelector('.modalImg');
+        img.setAttribute("src",imageLink)
     })
     .catch(error => {
         console.error("Error:", error.message)
@@ -51,11 +50,10 @@ const getQuote = () => {
       let current = data[0];
       let quote = current.quote;
       let author = current.author;
-      console.log(author, quote)
-      const quoteElement = document.getElementById('quote');
-      if (quoteElement) {
-          quoteElement.textContent = data[0]?.quote || "No quotes available.";
-      }
+      let quoteTag = document.querySelector(`.modalP`);
+      let authorTag= document.querySelector(`.modalH4`);
+      quoteTag.innerHTML = quote;
+      authorTag.innerHTML = author;
   })
   .catch(error => {
       console.error("Error:", error.message);
@@ -63,14 +61,3 @@ const getQuote = () => {
 }
 
 getQuote();
-
-//dialogue click trigger
-
-const dialogOpener = (dialogID) => {
-    let currentDialog = document.getElementById(dialogID)
-    currentDialog.open()
-    console.log("green")
-}
-
-const ariesButton = document.getElementById("Aries button")
-ariesButton.addEventListener("click", dialogOpener("ariesSelection"))
