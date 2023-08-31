@@ -1,5 +1,20 @@
 //IMAGE FETCH
+const signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Scorpio", "Sagittarius","Capricorn", "Aquarius", "Pisces"];
+const buttons = () => {
+    const buttonContainer = document.getElementById("button-Container"); 
+    signs.forEach((sign) => {
+        let button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("data-toggle", "modal");
+        button.setAttribute("data-target", "#exampleModalCenter");
+        
+        button.textContent = sign.toUpperCase();
+        console.log(buttonContainer)
+        buttonContainer.append(button);
+    });
+}
 
+buttons();
 const getImage = () => {
     
     const url1 = `https://api.artic.edu/api/v1/artworks/search?q=stars&fields=id,title,image_id&limit=100`
@@ -68,21 +83,10 @@ const getQuote = () => {
 
 getQuote();
 
-const signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Scorpio", "Sagittarius","Capricorn", "Aquarius", "Pisces"];
-const buttons = () => {
-    const buttonContainer = document.getElementById("button-Container"); 
-    signs.forEach((sign) => {
-        let button = document.createElement("button");
-        button.textContent = sign.toUpperCase();
-        console.log(buttonContainer)
-        buttonContainer.append(button);
-    });
-}
 
-buttons();
 const buttonContainer = document.getElementById("button-Container"); 
 buttonContainer.addEventListener("click", (e) => {
     if(!e.target.matches("button")) return;
     getQuote();
     getImage();
-})
+});
