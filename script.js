@@ -1,23 +1,39 @@
 //IMAGE FETCH
-const signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Scorpio", "Sagittarius","Capricorn", "Aquarius", "Pisces"];
+const signs = [
+    { name: "Aries", element: "fire"},
+    { name: "Taurus", element: "earth" },
+    { name: "Gemini", element: "air" },
+    { name: "Cancer", element: "water" },
+    { name: "Leo", element: "fire" },
+    { name: "Virgo", element: "earth" },
+    { name: "Libra", element: "air" },
+    { name: "Scorpio", element: "water" },
+    { name: "Sagittarius", element: "fire" },
+    { name: "Capricorn", element: "earth" },
+    { name: "Aquarius", element: "air" },
+    { name: "Pisces", element: "water" }
+];
+
 const buttons = () => {
     const buttonContainer = document.getElementById("button-Container"); 
     signs.forEach((sign) => {
         let button = document.createElement("button");
         button.setAttribute("type", "button");
-        button.setAttribute("data-toggle", "modal");
-        button.setAttribute("data-target", "#exampleModalCenter");
+        button.dataset.toggle = 'modal';
+        button.dataset.target = '#exampleModalCenter'
+
+        button.dataset.element = sign.element
         
-        button.textContent = sign.toUpperCase();
+        button.textContent = sign.name.toUpperCase();
         console.log(buttonContainer)
         buttonContainer.append(button);
     });
 }
 
 buttons();
-const getImage = () => {
+const getImage = (keyword) => {
     
-    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=stars&fields=id,title,image_id&limit=100`
+    const url1 = `https://api.artic.edu/api/v1/artworks/search?q=${keyword}&fields=id,title,image_id&limit=100`
     fetch(url1)
     .then(response => {
         // console.log(response);
@@ -26,8 +42,10 @@ const getImage = () => {
     .then(data => {
         console.log('here:', data);
         let correctData = data.data.filter(elem => {
+            console.log('im id', elem.image_id)
             return elem.image_id
         })
+        console.log('hihihihi', correctData)
         let currentImage = correctData[Math.floor(Math.random() * correctData.length - 1)]//this generates a random image, we might have to create four for each dialogue (i have an idea for this)
         console.log('image:', currentImage) //to check if i am fetching correct info
         //creating new image on document
@@ -38,10 +56,10 @@ const getImage = () => {
         img.setAttribute("src",imageLink)
     })
     .catch(error => {
+        console.log('hihihih')
         console.error("Error:", error.message)
     })
 }
-getImage()
 
 
 
@@ -87,6 +105,9 @@ getQuote();
 const buttonContainer = document.getElementById("button-Container"); 
 buttonContainer.addEventListener("click", (e) => {
     if(!e.target.matches("button")) return;
+    console.log(e.target.dataset)
+    const keyword = e.target.dataset.element
     getQuote();
-    getImage();
+    // getImage(e.target.dataSet[""]);
+    getImage(keyword);
 });
