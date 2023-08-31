@@ -1,5 +1,3 @@
-//DOM CALLS:
-
 //IMAGE FETCH
 
 const getImage = () => {
@@ -33,7 +31,7 @@ getImage()
 
 
 //QUOTE FETCH
-const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=";
+const apiUrl = "https://api.api-ninjas.com/v1/quotes?category="
 const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
 
 const getQuote = () => {
@@ -54,19 +52,17 @@ const getQuote = () => {
       console.log(data);
       let current = data[0];
       let quote = current.quote;
-      let author = current.author;
+      console.log(quote);
+      let author = current.author
+      console.log(author)
       let quoteTag = document.querySelector(`.modalP`);
       let authorTag= document.querySelector(`.modalH4`);
-      quoteTag.innerHTML = quote;
-      authorTag.innerHTML = author;
+      quoteTag.textContent = quote;
+      authorTag.textContent = author;
   })
   .catch(error => {
       console.error("Error:", error.message);
   });
 }
-getQuote()
-let button = document.querySelector(`.buttons`);
-button.addEventListener("click", () => {
-    getQuote();
-    getImage();
-});
+
+getQuote();

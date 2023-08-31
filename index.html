@@ -19,35 +19,36 @@
         <p><i>(type in: love, happiness, success, life, hope, humor, dreams, or failure)</i></p>
         <input type="text" id="searchTerm" name="fname"><br>
         <input type="submit" value="Submit">
-        <p><i>Press Enter</i></p>
       </form>
            <!-- Button trigger modal -->
-  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >Aries
-  </button>
-   <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Taurus
-  </button>
-    <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Gemini
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Cancer
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Leo
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Virgo
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Libra
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Scorpio
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Sagittarius
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Capricorn
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Aquarius
-  </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" >
-    Pisces
-  </button>
+    <div id = "buttonsDiv" style = "text-align: center">
+      <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getQuote();getImage()" >Aries
+      </button>
+       <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Taurus
+      </button>
+        <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage();getQuote()">
+        Gemini
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Cancer
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Leo
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Virgo
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Libra
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Scorpio
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Sagittarius
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Capricorn
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Aquarius
+      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
+        Pisces
+      </button>
+    </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
