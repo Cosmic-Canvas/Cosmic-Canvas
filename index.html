@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cosmic Canvas</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
     <div id = "Top of Page" style = "text-align: center">
@@ -21,33 +21,8 @@
         <input type="submit" value="Submit">
       </form>
            <!-- Button trigger modal -->
-    <div id = "buttonsDiv" style = "text-align: center">
-      <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getQuote();getImage()" >Aries
-      </button>
-       <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Taurus
-      </button>
-        <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage();getQuote()">
-        Gemini
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Cancer
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Leo
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Virgo
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Libra
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Scorpio
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Sagittarius
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Capricorn
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Aquarius
-      </button>  <button type="button" class="buttons" data-toggle="modal" data-target="#exampleModalCenter" onclick = "getImage(); getQuote()">
-        Pisces
-      </button>
+    <div id = "button-Container" style = "text-align: center">
+        <!-- <div class = " test" style = "text-align: center"></div> -->
     </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -19,6 +19,7 @@ const getImage = () => {
         let imageLink = `https://www.artic.edu/iiif/2/${currentImage.image_id}/full/843,/0/default.jpg`//we have to add the search feature to this link, not sure how?
    
         let img = document.querySelector('.modalImg');
+        console.log(img)
         img.setAttribute("src",imageLink)
     })
     .catch(error => {
@@ -66,3 +67,22 @@ const getQuote = () => {
 }
 
 getQuote();
+
+const signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Scorpio", "Sagittarius","Capricorn", "Aquarius", "Pisces"];
+const buttons = () => {
+    const buttonContainer = document.getElementById("button-Container"); 
+    signs.forEach((sign) => {
+        let button = document.createElement("button");
+        button.textContent = sign.toUpperCase();
+        console.log(buttonContainer)
+        buttonContainer.append(button);
+    });
+}
+
+buttons();
+const buttonContainer = document.getElementById("button-Container"); 
+buttonContainer.addEventListener("click", (e) => {
+    if(!e.target.matches("button")) return;
+    getQuote();
+    getImage();
+})
