@@ -1,17 +1,17 @@
 //IMAGE FETCH
 const signs = [
     { name: "Aries", element: "fire"},
-    { name: "Taurus", element: "earth" },
-    { name: "Gemini", element: "air" },
-    { name: "Cancer", element: "water" },
+    { name: "Taurus", element: "field" },
+    { name: "Gemini", element: "sky" },
+    { name: "Cancer", element: "ocean" },
     { name: "Leo", element: "fire" },
-    { name: "Virgo", element: "earth" },
-    { name: "Libra", element: "air" },
-    { name: "Scorpio", element: "water" },
+    { name: "Virgo", element: "rock" },
+    { name: "Libra", element: "sky" },
+    { name: "Scorpio", element: "river" },
     { name: "Sagittarius", element: "fire" },
-    { name: "Capricorn", element: "earth" },
-    { name: "Aquarius", element: "air" },
-    { name: "Pisces", element: "water" }
+    { name: "Capricorn", element: "mountain" },
+    { name: "Aquarius", element: "sky" },
+    { name: "Pisces", element: "lake" }
 ];
 
 const buttons = () => {
