@@ -30,7 +30,31 @@ const buttons = () => {
     });
 }
 
+
 buttons();
+
+const categories = ["Love", "Happiness", "Beauty", "Art", "Dreams", "Design", "Love", "Life", "Money", "Success", "Future", "Friendship", "Change", "Anger", "Knowledge", "Inspirational"]
+const selectLibrary = document.getElementById("quote-selection")
+const submitButton = document.getElementById("submit")
+const options = () => {
+    categories.forEach((category) => {
+        let option = document.createElement("option")
+        let name = option.setAttribute("name", "category")
+        let value = option.setAttribute("value", category.toLowerCase())
+        option.textContent = category
+        selectLibrary.append(option)
+    })
+}
+options();
+
+let selectValue = 
+document.getElementById("quote-form").addEventListener('submit', (e) => {
+  e.preventDefault();
+  let selectValue = selectLibrary.value
+  console.log(selectValue)
+  e.target.reset();
+});
+
 const getImage = (keyword) => {
     
     const url1 = `https://api.artic.edu/api/v1/artworks/search?q=${keyword}&fields=id,title,image_id&limit=100`
@@ -65,7 +89,7 @@ const getImage = (keyword) => {
 
 
 //QUOTE FETCH
-const apiUrl = "https://api.api-ninjas.com/v1/quotes?category="
+const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=${selectValue}` 
 const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
 
 const getQuote = () => {
