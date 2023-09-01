@@ -33,7 +33,7 @@ const buttons = () => {
 
 buttons();
 
-const categories = ["Love", "Happiness", "Beauty", "Art", "Dreams", "Design", "Love", "Life", "Money", "Success", "Future", "Friendship", "Change", "Anger", "Knowledge", "Inspirational"]
+const categories = ["","Love", "Happiness", "Beauty", "Art", "Dreams", "Design", "Love", "Life", "Money", "Success", "Future", "Friendship", "Change", "Anger", "Knowledge", "Inspirational"]
 const selectLibrary = document.getElementById("quote-selection")
 const submitButton = document.getElementById("submit")
 const options = () => {
@@ -47,12 +47,12 @@ const options = () => {
 }
 options();
 
-let selectValue = 
+let selectValue = ""
 document.getElementById("quote-form").addEventListener('submit', (e) => {
   e.preventDefault();
-  let selectValue = selectLibrary.value
+  selectValue = selectLibrary.value
   console.log(selectValue)
-  e.target.reset();
+//   e.target.reset();
 });
 
 const getImage = (keyword) => {
@@ -89,10 +89,11 @@ const getImage = (keyword) => {
 
 
 //QUOTE FETCH
-const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=${selectValue}` 
-const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
 
 const getQuote = () => {
+    const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=${selectValue}` 
+    const apiKey = "C0JKrfecBv+KRuO4vJLUyA==34vYZWBJlqLJ4U1D";
+
   fetch(apiUrl, {
       method: 'GET',
       headers: {
@@ -113,6 +114,9 @@ const getQuote = () => {
       console.log(quote);
       let author = current.author
       console.log(author)
+      console.log(apiUrl)
+      console.log(current.category)
+      console.log(selectValue)
       let quoteTag = document.querySelector(`.modalP`);
       let authorTag= document.querySelector(`.modalH4`);
       quoteTag.textContent = quote;
