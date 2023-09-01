@@ -52,7 +52,13 @@ document.getElementById("quote-form").addEventListener('submit', (e) => {
   e.preventDefault();
   selectValue = selectLibrary.value
   console.log(selectValue)
-//   e.target.reset();
+  let selection = document.getElementById("selection-p");
+  if(selectValue.length === 0){
+      selection.textContent = "You have selected random quote."
+  }else{
+      selection.textContent = `You have selected ${selectValue}.`;
+  }
+  e.target.reset();
 });
 
 const getImage = (keyword) => {

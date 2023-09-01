@@ -19,11 +19,11 @@
      <div id = "form-div" style = "text-align:center">
 
        <form id = "quote-form" type = "submit">
-          <label for="input">Pick a Quote Category (optional)</label></label>
+          <label for="input">Pick a Quote Category <i>(optional)</i></label><br>
         <select name="quote-selection" id="quote-selection">
-
         </select>
-        <button id = "submit">Submit</button>
+        <button id = "submit">Submit</button><br>
+        <p id = "selection-p"><i></i></p>
       </form>
      </div>
            <!-- Button trigger modal -->
@@ -33,17 +33,17 @@
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content"style = "text-align:center; background-color: black;">
+        <div class="modal-header" style = "color: white;">
           <h5 class="modal-title" id="exampleModalLongTitle">Your Cosmic Canvas</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style = "color:white;">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="aries-body">
+        <div class="aries-body" style = "color: white;">
           <img class = "modalImg" width = 400 height = 400>
-          <p class = "modalP" style = "color: black;"></p>
-          <h4 class = "modalH4" style = "color: black;"></h3>
+          <p class = "modalP"></p>
+          <h4 class = "modalH4"></h3>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
