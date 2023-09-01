@@ -84,6 +84,8 @@ const getImage = (keyword) => {
         let img = document.querySelector('.modalImg');
         console.log(img)
         img.setAttribute("src",imageLink)
+        let imgTitle = document.getElementById("image-title");
+        imgTitle.textContent = currentImage.title
     })
     .catch(error => {
         console.log('hihihih')
