@@ -19,6 +19,7 @@ const buttons = () => {
     signs.forEach((sign) => {
         let button = document.createElement("button");
         button.setAttribute("type", "button");
+        button.setAttribute("class", "btn btn-outline-light mb-2 btn-lg btn-block");
         button.dataset.toggle = 'modal';
         button.dataset.target = '#exampleModalCenter'
 
